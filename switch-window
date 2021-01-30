@@ -1,0 +1,30 @@
+#! /bin/bash
+
+# NOTE
+# problem with xdotool search --name
+# is it captures widget inside the app as well
+# so we capture the window id by wmctrl
+
+# INPUT
+search_app=$1
+app_cli=$2
+
+if [ -z "$1" ]; then
+  echo "App search string required"
+  exit 1
+fi
+
+if [ -z "$2" ]; then
+  echo "App cli command is required"
+  exit 1
+fi
+
+
+# SCRIPT
+result=$(wmctrl -l | grep -i $search_app)
+if [ $? -eq 0 ]; then
+  hex_id=$(cut -d ' ' -f 1 <<< $result)
+  xdotool windowActivate $hex_id
+else
+  bash -c $app_cli
+fi
