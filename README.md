@@ -31,13 +31,13 @@ switch-window "terminal" "gnome-terminal"
 Setting > Keyboard Shortcuts \
 Mine is listed below
 
-| Binding | Action                  |
-|---------|-------------------------|
-| Super+x | Open/Switch to Terminal |
-| Super+b | Open/Switch to Dbeaver  |
-| Super+c | Open/Switch to Chrome   |
-| Super+e | Switch to Devtools      |
-| Super+z | Switch/Cycle VSCode     |
+| Binding | Action                  | Command                                  |
+|---------|-------------------------|------------------------------------------|
+| Super+x | Open/Switch to Terminal | `switch-window terminal gnome-terminal`  |
+| Super+b | Open/Switch to Dbeaver  | `switch-window dbeaver dbeaver`          |
+| Super+c | Open/Switch to Chrome   | `switch-window chrome  google-chrome`    |
+| Super+e | Switch to Devtools      | `switch-window "DevTools" "echo"`        |
+| Super+z | Switch/Cycle VSCode     | `xdotool search --name "Visual Studio Code" windowActivate %1` |
 
 ## Special case
 There are two special case for me
